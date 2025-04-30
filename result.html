@@ -1,0 +1,114 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Prediction Result</title>
+    <style>
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            text-align: center;
+            padding: 50px;
+            background: linear-gradient(to right, #e1f5fe, #ffffff);
+        }
+
+        h1 {
+            color: #01579b;
+            font-size: 2.5em;
+            margin-bottom: 30px;
+        }
+
+        .result {
+            background-color: #ffffff;
+            display: inline-block;
+            padding: 30px 40px;
+            border-radius: 15px;
+            box-shadow: 0 10px 25px rgba(0, 0, 0, 0.1);
+            font-size: 20px;
+        }
+
+        img {
+            width: 300px;
+            margin-top: 20px;
+            border-radius: 12px;
+            box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2);
+        }
+
+        .tips {
+            margin-top: 25px;
+            text-align: left;
+            display: inline-block;
+            background-color: #e3f2fd;
+            padding: 20px;
+            border-radius: 10px;
+        }
+
+        .tips h3 {
+            color: #0277bd;
+            margin-bottom: 10px;
+        }
+
+        .tips ul {
+            padding-left: 20px;
+        }
+
+        .tips li {
+            margin-bottom: 8px;
+            font-size: 16px;
+        }
+
+        .result span {
+            font-weight: bold;
+            font-size: 24px;
+        }
+
+        a {
+            display: inline-block;
+            margin-top: 30px;
+            font-size: 16px;
+            text-decoration: none;
+            color: #006064;
+            border: 1px solid #006064;
+            padding: 10px 20px;
+            border-radius: 10px;
+            transition: all 0.3s ease;
+        }
+
+        a:hover {
+            background-color: #006064;
+            color: white;
+        }
+
+        @media screen and (max-width: 600px) {
+            .result, .tips {
+                width: 90%;
+            }
+
+            img {
+                width: 90%;
+            }
+        }
+    </style>
+</head>
+<body>
+    <h1>Prediction Result</h1>
+
+    <div class="result">
+        <p>Prediction: 
+            <span style="color: {{ 'red' if prediction == 'Leukemia Detected' else 'green' }}">
+                {{ prediction }}
+            </span>
+        </p>
+        <img src="{{ image_path }}" alt="Uploaded Image">
+        <div class="tips">
+            <h3>Precautions:</h3>
+            <ul>
+                {% for tip in tips %}
+                    <li>{{ tip }}</li>
+                {% endfor %}
+            </ul>
+        </div>
+    </div>
+
+    <a href="/">&#8592; Try Another Image</a>
+</body>
+</html>
