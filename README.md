@@ -1,4 +1,4 @@
-# 🧬 Leukemia Detection using HQC-Net
+# 🧬 HQC-Net: Hybrid Quantum-Classical Network for Leukemia Detection
 
 **Acute Lymphoblastic Leukemia (ALL)** is a severe form of blood cancer affecting both children and adults. Early and accurate detection is crucial for improving survival rates. This project presents **HQC-Net: Hybrid Quantum-Classical Network**, a novel approach that combines classical CNN-based feature extraction with Quantum Neural Networks (QNNs) for efficient and accurate leukemia classification.
 
